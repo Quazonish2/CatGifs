@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😺Cats🐈</title>
+    <link rel="icon" type="image/png" href="cat.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #catGif {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            transition: transform 0.5s ease;
+        }
+
+        #catGif:hover {
+            transform: translate(-50%, -50%) scale(2.5);
+        }
+    </style>
+</head>
+<body>
+    <img id="catGif" src="https://cataas.com/cat/gif" alt="😺Cat🐈">
+
+    <script>
+        var img = document.getElementById('catGif');
+        function refreshCatGif() {
+            img.src = 'https://cataas.com/cat/gif?' + new Date().getTime();
+        }
+
+        setInterval(refreshCatGif, 5000);
+    </script>
+</body>
+</html>
